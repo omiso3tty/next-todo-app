@@ -45,6 +45,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <p>Hello Vercel</p>
       </main>
       <footer className={styles.footer}>
         <a
