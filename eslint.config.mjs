@@ -7,6 +7,7 @@ import typescriptParser from '@typescript-eslint/parser'
 import unicorn from 'eslint-plugin-unicorn'
 import importPlugin from 'eslint-plugin-import'
 import unuserdPlugin from 'eslint-plugin-unused-imports'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -15,7 +16,7 @@ const compat = new FlatCompat({ baseDirectory: __dirname })
 
 const eslintConfig = [
   eslint.configs.recommended,
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {
@@ -46,6 +47,7 @@ const eslintConfig = [
       ],
       'func-style': ['error', 'declaration', { allowArrowFunctions: false }],
       'prefer-arrow-callback': ['error', { allowNamedFunctions: false }],
+      'react/jsx-sort-props': 'error',
       'unicorn/filename-case': ['error', { case: 'kebabCase' }],
       'import/no-default-export': 'error',
       'import/order': [
@@ -82,6 +84,7 @@ const eslintConfig = [
       'import/prefer-default-export': 'error',
     },
   },
+  eslintConfigPrettier,
 ]
 
 export default eslintConfig
