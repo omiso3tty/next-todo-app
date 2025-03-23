@@ -6,6 +6,7 @@ import typescript from '@typescript-eslint/eslint-plugin'
 import typescriptParser from '@typescript-eslint/parser'
 import unicorn from 'eslint-plugin-unicorn'
 import importPlugin from 'eslint-plugin-import'
+import unuserdPlugin from 'eslint-plugin-unused-imports'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -21,6 +22,7 @@ const eslintConfig = [
       '@typescript-eslint': typescript,
       unicorn: unicorn,
       import: importPlugin,
+      'unused-imports': unuserdPlugin,
     },
     languageOptions: {
       parser: typescriptParser,
@@ -42,10 +44,29 @@ const eslintConfig = [
         'error',
         { checksVoidReturn: { attributes: false } },
       ],
-      'unicorn/filename-case': ['error', { case: 'kebabCase' }],
       'func-style': ['error', 'declaration', { allowArrowFunctions: false }],
       'prefer-arrow-callback': ['error', { allowNamedFunctions: false }],
+      'unicorn/filename-case': ['error', { case: 'kebabCase' }],
       'import/no-default-export': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+          'newlines-between': 'always',
+          pathGroupsExcludedImportTypes: ['builtin'],
+          alphabetize: { order: 'asc' },
+        },
+      ],
+      'unused-imports/no-unused-imports': 'error',
     },
   },
   {

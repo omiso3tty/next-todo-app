@@ -1,6 +1,8 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+
 import { env } from '@/env'
+
+import styles from './page.module.css'
 
 export default function Home() {
   const url = env.DEBUG_URL
