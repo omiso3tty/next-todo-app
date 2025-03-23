@@ -1,10 +1,15 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { env } from '@/env'
 
 export default function Home() {
+  const url = env.DEBUG_URL
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <p className="text-sm text-gray-500">{url}</p>
+
         <Image
           className={styles.logo}
           src="/next.svg"

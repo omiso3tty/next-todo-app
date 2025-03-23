@@ -15,6 +15,7 @@
   "dependencies": {
     "@pandacss/dev": "^0.53.1",
     "@prisma/client": "^6.4.1",
+    "@t3-oss/env-nextjs": "^0.12.0",
     "lucide-react": "^0.479.0",
     "next": "15.2.1",
     "next-auth": "^4.24.11",
