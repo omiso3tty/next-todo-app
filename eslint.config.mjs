@@ -6,7 +6,7 @@ import typescript from '@typescript-eslint/eslint-plugin'
 import typescriptParser from '@typescript-eslint/parser'
 import unicorn from 'eslint-plugin-unicorn'
 import importPlugin from 'eslint-plugin-import'
-import unuserdPlugin from 'eslint-plugin-unused-imports'
+import unusedPlugin from 'eslint-plugin-unused-imports'
 import eslintConfigPrettier from 'eslint-config-prettier'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -23,7 +23,7 @@ const eslintConfig = [
       '@typescript-eslint': typescript,
       unicorn: unicorn,
       import: importPlugin,
-      'unused-imports': unuserdPlugin,
+      'unused-imports': unusedPlugin,
     },
     languageOptions: {
       parser: typescriptParser,

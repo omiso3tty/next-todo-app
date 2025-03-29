@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "markuplint": "markuplint \"./**/*.tsx\"",
+    "cspell": "cspell .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.27.0",
     "@typescript-eslint/parser": "^8.27.0",
+    "cspell": "^8.18.0",
     "cypress": "^14.1.0",
     "eslint": "^9.22.0",
     "eslint-config-next": "15.2.1",
